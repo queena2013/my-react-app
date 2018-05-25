@@ -15,16 +15,16 @@ const User = mongoose.model('user', new mongoose.Schema({
 	user:{type:String,require:true},
 	age:{type:Number,require:true}
 }))
-User.create({
-	user:'xiaohua',
-	age:12
-},function(err, doc){
-	if(!err){
-		console.log(doc)
-	}else{
-		console.log(err)
-	}
-})
+// User.create({
+// 	user:'xiaohua',
+// 	age:12
+// },function(err, doc){
+// 	if(!err){
+// 		console.log(doc)
+// 	}else{
+// 		console.log(err)
+// 	}
+// })
 //删除
 // User.remove({},function(err,doc){
 // 	console.log(doc);
