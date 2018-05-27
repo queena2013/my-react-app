@@ -8,7 +8,6 @@ class Login extends React.Component{
 		this.register = this.register.bind(this)
 	}
 	register(){
-		console.log(this.props);
 		this.props.history.push('/register')
 	}
 	render(){
@@ -19,7 +18,7 @@ class Login extends React.Component{
 				<WingBlank>
 					<List>
 						<InputItem>用户</InputItem>
-						<WhiteSpace/>
+						<WhiteSpace />
 						<InputItem>密码</InputItem>
 					</List>
 					<WhiteSpace />
