@@ -4,7 +4,7 @@ import {withRouter} from 'react-router-dom'
 @withRouter
 
 class AuthRoute extends React.Component{
-	ComponentDidMount(){
+	componentDidMount(){
 		const publicList = ['/login', '/register']
 		const pathname = this.props.location.pathname
 		if(publicList.indexOf(pathname)>-1){
@@ -13,7 +13,6 @@ class AuthRoute extends React.Component{
 		//获取用户信息
 		axios.get('/user/info').
 			then(res=>{
-				console.log(res)
 				if(res.status==200){
 					if(res.data.code==0){
 						//有登录信息的
