@@ -27,10 +27,9 @@ class AvatarSelector extends React.Component{
 						columnNum={5}
 						onClick={elm=>{
 							this.setState(elm)
-							this.props.selectAvatar(elm.ext)
+							this.props.selectAvatar(elm.text)
 						}}
 					/>
-					头像选择
 				</List>
 			</div>
 		)

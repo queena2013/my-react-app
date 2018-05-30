@@ -4,7 +4,6 @@ import {getRedirectPath} from '../util'
 const AUTH_SUCCESS = 'AUTH_SUCCESS'
 const ERROR_MSG = 'ERROR_MSG'
 const LOAD_DATA = 'LOAD_DATA'
-
 const initState={
 	redirectTo:'',
 	msg:'',
@@ -14,11 +13,11 @@ const initState={
 export function user(state=initState, action){
 	switch(action.type){
 		case AUTH_SUCCESS:
-			return {...state, msg:'', redirectTo:getRedirectPath(action.payload), ...action.payload}
+			return {...state,msg:'',redirectTo:getRedirectPath(action.payload),...action.payload}
 		case LOAD_DATA:
-			return {...state, ...action.payload}
+			return {...state,...action.payload}
 		case ERROR_MSG:
-			return {...state,isAuth:false, msg:action.msg}
+			return {...state,isAuth:false,msg:action.msg}
 		default:
 			return state
 	}
@@ -27,7 +26,7 @@ export function user(state=initState, action){
 
 function authSuccess(obj){
 	const {pwd,...data} = obj
-	return {type:AUTH_SUCCESS, payload:data}
+	return {type:AUTH_SUCCESS,payload:data}
 }
 
 function errorMsg(msg){
