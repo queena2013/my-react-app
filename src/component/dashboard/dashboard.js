@@ -10,10 +10,12 @@ import User from '../../component/user/user'
 function Msg(){
 	return <h2>消息列表页面</h2>
 }
+
 @connect(
 	state=>state
 )
 class Dashboard extends React.Component{
+
 	render(){
 		const {pathname} = this.props.location
 		const user = this.props.user
@@ -49,20 +51,27 @@ class Dashboard extends React.Component{
 				component:User
 			}
 		]
+
+
 		return (
 			<div>
-				<NavBar className='fixed-header' mode="dark">{navList.find(v=>v.path==pathname).title}</NavBar>
+				<NavBar className='fixd-header' mode='dard'>{navList.find(v=>v.path==pathname).title}</NavBar>
 				<div style={{marginTop:45}}>
-					<Switch>
-						{navList.map(v=>(
-							<Route key={v.path} path={v.path} component={v.component}></Route>
-						))}
-					</Switch>
+						<Switch>
+							{navList.map(v=>(
+								<Route key={v.path} path={v.path} component={v.component}></Route>
+							))}
+						</Switch>
 				</div>
+
 				<NavLinkBar data={navList}></NavLinkBar>
+				
 			</div>
 		)
+
+		
 	}
+
 }
 
 export default Dashboard

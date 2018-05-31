@@ -1,9 +1,9 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import {createStore, applyMiddleware, compose} from 'redux'
+import ReactDom from 'react-dom'
+import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
-import {Provider} from 'react-redux'
-import {BrowserRouter, Route, Redirect, Switch} from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { BrowserRouter, Route, Redirect,Switch } from 'react-router-dom'
 
 import Login from './container/login/login'
 import Register from './container/register/register'
@@ -20,21 +20,22 @@ const store = createStore(reducers, compose(
 	window.devToolsExtension?window.devToolsExtension():f=>f
 ))
 
-//boss genius me msg 4个页面
-ReactDOM.render(
+// boss genius me msg 4个页面
+ReactDom.render(
 	(<Provider store={store}>
 		<BrowserRouter>
 			<div>
 				<AuthRoute></AuthRoute>
 				<Switch>
 					<Route path='/bossinfo' component={BossInfo}></Route>
-					<Route path="/geniusinfo" component={GeniusInfo}></Route>
+					<Route path='/geniusinfo' component={GeniusInfo}></Route>
 					<Route path='/login' component={Login}></Route>
-					<Route path="/register" component={Register}></Route>
+					<Route path='/register' component={Register}></Route>
 					<Route component={Dashboard}></Route>
 				</Switch>
+
 			</div>
 		</BrowserRouter>
-	</Provider>), 
+	</Provider>),
 	document.getElementById('root')
 )

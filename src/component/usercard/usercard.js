@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Card, WhiteSpace, WingBlank} from 'antd-mobile'
+import {Card, WhiteSpace,WingBlank} from 'antd-mobile'
 
 class UserCard extends React.Component{
 	static propTypes = {
@@ -11,7 +11,7 @@ class UserCard extends React.Component{
 		const Body = Card.Body
 		return (
 			<WingBlank>
-				<WhiteSpace></WhiteSpace>
+			<WhiteSpace></WhiteSpace>
 				{this.props.userlist.map(v=>(
 					v.avatar?(<Card key={v._id}>
 						<Header
@@ -20,17 +20,21 @@ class UserCard extends React.Component{
 							extra={<span>{v.title}</span>}
 						></Header>
 						<Body>
-							{v.type=='boss'?<div>公司:{v.company}</div>:null}
+							{v.type=='boss'? <div>公司:{v.company}</div> :null}
+
 							{v.desc.split('\n').map(d=>(
 								<div key={d}>{d}</div>
 							))}
-							{v.type=='boss'?<div>薪资:{v.money}</div>:null}
+							{v.type=='boss'? <div>薪资:{v.money}</div> :null}
 						</Body>
 					</Card>):null
+
 				))}
 			</WingBlank>
 		)
+
+
 	}
 }
-
 export default UserCard
+
